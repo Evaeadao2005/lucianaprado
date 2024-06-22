@@ -41,6 +41,14 @@
             font-size: 18px; /* Tamanho de fonte aumentado para melhor legibilidade */
             line-height: 1.8;
         }
+        .highlight {
+            background-color: #ff69b4; /* Rosa pink para destaque */
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
         .button-whatsapp {
             display: inline-block;
             background-color: #ff69b4; /* Rosa pink para o botão */
@@ -140,7 +148,11 @@
     <div class="container">
         <h2>Sobre Mim</h2>
         <p>Olá, sou Luciana Prado, uma loira estilo panicat, com corpo perfeito e muita disposição para realizar suas fantasias mais intensas. Sou especialista em boquete, anal, massagem tântrica, e estou disponível para atenção a casais, mulheres e despedidas de solteiro.</p>
-        <p>Atendo sozinha em minha casa própria e discreta no Loteamento Recife. Meu espaço oferece garagem e total privacidade. Além disso, faço ligações de vídeo e tenho disponibilidade para saídas para Recife.</p>
+        <div class="highlight">
+            <p><strong>Localização:</strong> Atendo em minha casa própria e discreta no Loteamento Recife.</p>
+            <p><strong>Privacidade:</strong> Espaço com garagem e total privacidade.</p>
+            <p><strong>Atendimento:</strong> Atendo sozinha, garantindo um atendimento exclusivo e personalizado.</p>
+        </div>
         <a href="https://wa.me/5588999578579" class="button-whatsapp" target="_blank">Entre em Contato pelo WhatsApp</a>
     </div>
 </section>
@@ -156,6 +168,7 @@
             <li>Festas e eventos</li>
             <li>Atenção a deficientes físicos</li>
             <li>Despedidas de solteiro</li>
+            <li>Chamadas de vídeo</li>
         </ul>
         <p>Para mais informações sobre tarifas e formas de pagamento, entre em contato diretamente.</p>
     </div>
@@ -214,13 +227,14 @@
     let currentSlide = 0;
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.children.length;
+   currentSlide = (currentSlide + 1) % slides.children.length;
         slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
     }
 
     setInterval(nextSlide, 5000); // Alterna o slide a cada 5 segundos
 
     window.addEventListener('resize', () => {
+        const slideWidth = document.querySelector('.slide').clientWidth;
         slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
     });
 </script>
