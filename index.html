@@ -97,7 +97,7 @@
             overflow: hidden;
             position: relative;
             margin-bottom: 20px;
-            height: 400px; /* Altura fixa para os slides */
+            height: auto;
         }
         .slides {
             display: flex;
@@ -110,7 +110,7 @@
         }
         .slide img {
             width: 100%;
-            height: 400px; /* Altura fixa para as imagens dos slides */
+            height: auto;
             object-fit: cover;
             vertical-align: middle;
         }
@@ -227,15 +227,14 @@
     let currentSlide = 0;
 
     function nextSlide() {
-   currentSlide = (currentSlide + 1) % slides.children.length;
+        currentSlide = (currentSlide + 1) % slides.children.length;
         slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
     }
 
     setInterval(nextSlide, 5000); // Alterna o slide a cada 5 segundos
-
-    window.addEventListener('resize', () => {
-        const slideWidth = document.querySelector('.slide').clientWidth;
-        slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+ window.addEventListener('resize', () => {
+        const newSlideWidth = document.querySelector('.slide').clientWidth;
+        slides.style.transform = `translateX(${-currentSlide * newSlideWidth}px)`;
     });
 </script>
 
